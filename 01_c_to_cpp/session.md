@@ -96,7 +96,8 @@ void modify_variable(int& my_var)
 int main()
 {
     int var = 1;
-    return modify_variable(var);
+    modify_variable(var);
+    return var;
 }
 ```
 
@@ -111,7 +112,8 @@ void print_variable(const int& my_var)
 int main()
 {
     int var = 1;
-    return print_variable(var);
+    print_variable(var);
+    return var;
 }
 ```
 
@@ -131,6 +133,7 @@ constexpr int MY_VARIABLE = 5;
 int main()
 {
     printf("%d\r\n", MY_VARIABLE);
+    return 0;
 }
 
 ```
