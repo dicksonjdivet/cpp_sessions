@@ -241,14 +241,14 @@ protected:
     }
 }
 
-class Car {
+class Car : public Vehicle {
 public:
     void start(){
         log("vroum!");
     }
 };
 
-class Bus {
+class Bus : public Vehicle {
 public:
     void start(){
         log("VROUM!");
