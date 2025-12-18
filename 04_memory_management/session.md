@@ -310,5 +310,5 @@ Tips: Embed the size of each allocation during the `new` and `new[]` operators a
 
 ### Exercise 2: smart pointer
 
-Implement a class named `UniqueSPI` that uses a regular pointer to manage a `SPI` object.
-- Implement the constructor, destructor, move constructor, and move assignment operator for `UniqueSPI`.
+Implement a class named `UniqueGPIO` that uses a regular pointer to manage a `GPIO` object.
+- Implement the constructor, destructor, move constructor, and move assignment operator for `UniqueGPIO`.
