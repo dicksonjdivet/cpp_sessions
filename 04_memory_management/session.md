@@ -37,7 +37,7 @@ int main()
 }
 ```
 
-Both operators corresponds to the following implementation:
+Both operators will call the following functions:
 
 ```c++
 #include <cstdlib>
@@ -103,7 +103,7 @@ int main()
 {
     // Create a unique pointer to a Car object
     // std::unique_ptr<Car> carPtr = std::unique_ptr<Car>(new Car());
-    std::unique_ptr<Car> carPtr = std::make_unique<Car>(); // Since C++14
+    std::unique_ptr<Car> carPtr = std::make_unique<Car>(); // make_unique exists Since C++14
 
     // Use the carPtr as a regular pointer
     carPtr->drive();
@@ -136,7 +136,7 @@ int main()
 
 #### Shared pointer
 
-Shared
+Shared pointers allow multiple objects or scopes to share ownership of an object.
 
 ```c++
 #include <memory> // For std::shared_ptr
@@ -178,9 +178,13 @@ int main()
 }
 ```
 
-Opposite to unique pointers, shared pointers can be copied. The ownership is shared between multiple objects or scopes.
+In opposition to unique pointers, shared pointers can be copied. The ownership is shared among multiple objects or scopes.
 
 #### Weak pointer
+
+Unfortunately, shared pointers can lead to circular references which can cause memory leaks.
+
+Imagine two objects that hold shared pointers to each other. Even when both objects go out of scope, their reference counts will never reach zero, preventing their memory from being released.
 
 Weak pointers are used to break circular references in shared pointers.
 They allow you to have a non-owning reference to an object managed by a shared pointer.
