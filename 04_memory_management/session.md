@@ -199,6 +199,10 @@ public:
     void setChild(std::shared_ptr<Node> childNode) {
         child = childNode;
     }
+
+    std::shared_ptr<Node> getParent() const {
+        return parent.lock(); // Convert weak_ptr to shared_ptr
+    }
 private:
     std::weak_ptr<Node> parent; // Non-owning reference to parent Node
     std::shared_ptr<Node> child;  // Owning reference to child Node
