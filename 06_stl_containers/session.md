@@ -384,7 +384,6 @@ int main() {
 ### Stack
 
 A stack is a container adapter that provides LIFO (Last In, First Out) operations.
-By default, it uses a deque as the underlying container, but you can specify vector or list.
 
 ```c++
 
@@ -418,7 +417,6 @@ int main() {
 ### Queue
 
 A queue is a container adapter that provides FIFO (First In, First Out) operations.
-By default, it uses a deque as the underlying container.
 
 ```c++
 
@@ -448,42 +446,6 @@ int main() {
 - Pop O(1)
 - Front/Back O(1)
 - No random access or iteration!
-
-### Priority Queue
-
-A priority queue is a container adapter that provides constant time lookup of the largest (by default) element.
-Internally implemented as a heap.
-
-```c++
-
-#include <queue>
-
-int main() {
-    std::priority_queue<int> my_pq;
-
-    my_pq.push(3);
-    my_pq.push(1);
-    my_pq.push(4);
-    my_pq.push(1);
-    my_pq.push(5);
-
-    // Elements come out in descending order (largest first)
-    while (!my_pq.empty()) {
-        printf("%d ", my_pq.top()); // 5 4 3 1 1
-        my_pq.pop();
-    }
-
-    return 0;
-}
-```
-
-#### Performances
-
-- Push O(log n)
-- Pop O(log n)
-- Top O(1)
-- No random access or iteration!
-
 
 ## Exercises
 
