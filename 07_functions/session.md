@@ -332,13 +332,13 @@ int main()
     int dummy = 1;
     // Here the update function will call the lambda expression
     // We can directly pass the lambda without having to write a separate function
-    update(dummy, [](int value){
+    display(dummy, [](int value){
         printf("Displaying: %d\n", value);
     });
 
-    update(dummy, [](int value){
-        printf("Another display: %d\n", value);
-    })
+    display(dummy, [](int value){
+        printf("Another display: %c\n", value);
+    });
 }
 
 ```
